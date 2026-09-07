@@ -83,8 +83,8 @@ Three stages, in order, each waiting on the last.
   `onepassword` `ClusterSecretStore`, and the Cloudflare token as a
   `ClusterExternalSecret`.
 - **`underlay`** — cert-manager, CNPG, Kyverno, Keel, external-dns, Envoy Gateway;
-  the `ClusterIssuer`, the gateway and its certificate, and the Postgres STARTTLS
-  shim.
+  the `ClusterIssuer`, the CNPG barman-cloud backup plugin, the gateway and its
+  certificate, and the Postgres STARTTLS shim.
 - **`observability`** — kube-prometheus-stack, grafana-operator, Alloy, Loki, Tempo,
   and a Grafana instance with datasources and alerting.
 
@@ -96,7 +96,9 @@ change is a contract, not a parameter.
 
 ## Conventions
 
-- One namespace per operator.
+- One namespace per operator. The exception is `plugin-barman-cloud`, which CNPG
+  discovers by Service in its own namespace and so has to install into
+  `cnpg-system`.
 - Workloads reading a credential from the environment carry
   `reloader.stakater.com/auto: "true"`, so a rotated Secret reaches the process.
 - Namespaces opt in to gateway routing with the
