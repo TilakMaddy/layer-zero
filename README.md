@@ -46,7 +46,7 @@ directly. Every key below is required.
 | `PLATFORM_SOURCE` | name of your `GitRepository` pointing at this repo |
 | `PLATFORM_PATH_PREFIX` | where you vendored it, relative to the source root; `.` when the package is the source itself |
 | `PLATFORM_NAMESPACE` | namespace to create and install the gateway into |
-| `CLUSTER_NAME` | external-dns TXT owner id |
+| `TXT_OWNER_ID` | external-dns `--txt-owner-id`; must be unique among clusters sharing a DNS zone, and changing it on a live cluster orphans the TXT records the old id owns |
 | `CLUSTER_ZONE` | DNS zone the gateway serves, e.g. `example.com` |
 | `ACME_EMAIL` | Let's Encrypt account address |
 | `ACME_ENV` | `staging` or `production` |

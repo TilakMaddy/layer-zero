@@ -53,7 +53,7 @@ spec:
       - gateway-httproute
 
     policy: upsert-only
-    txtOwnerId: ${CLUSTER_NAME}
+    txtOwnerId: ${TXT_OWNER_ID}
     extraArgs:
       - --annotation-filter=oatlabs.oatmilk.work/external-dns=true
       - --cloudflare-dns-records-per-page=5000
