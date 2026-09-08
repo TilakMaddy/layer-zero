@@ -10,7 +10,7 @@ metadata:
   name: grafana-alertmanager-auth
   namespace: prometheus-system
 spec:
-  refreshInterval: 1h
+  refreshInterval: 15m
   secretStoreRef:
     kind: ClusterSecretStore
     name: onepassword
