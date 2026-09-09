@@ -17,8 +17,6 @@ spec:
     substituteFrom:
       - kind: ConfigMap
         name: platform-vars
-      - kind: ConfigMap
-        name: platform-owner-vars
 
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
@@ -42,8 +40,6 @@ spec:
     substituteFrom:
       - kind: ConfigMap
         name: platform-vars
-      - kind: ConfigMap
-        name: platform-owner-vars
 
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
@@ -67,7 +63,5 @@ spec:
     substituteFrom:
       - kind: ConfigMap
         name: platform-vars
-      - kind: ConfigMap
-        name: platform-owner-vars
       - kind: Secret
         name: platform-secret-vars
